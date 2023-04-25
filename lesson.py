@@ -8,3 +8,4 @@ cur = db.cursor() # Переменная для управления базой 
 cur.execute("""SELECT * FROM Students;""") # Запрос для получения содержимого таблицы Students
 result = cur.fetchall() # Результат запроса
 print(result)
+print(type(result))
