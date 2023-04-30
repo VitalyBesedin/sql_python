@@ -22,3 +22,4 @@ cur.execute("""CREATE TABLE IF NOT EXISTS Students(
 	Last_name TEXT NOT NULL
 );""")
 db.commit()  # Saving a request
+print("Studets table created")
