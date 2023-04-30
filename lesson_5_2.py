@@ -15,9 +15,23 @@ db = sqlite3.connect('test_sql.db')  # database creation
 print("Connected to the database")
 cur = db.cursor()  # Variable to control the database
 
+# """Table creation"""
+# cur.execute("""CREATE TABLE IF NOT EXISTS Students(
+#     StudentID INTEGER PRIMARY KEY,
+# 	First_name TEXT NOT NULL,
+# 	Last_name TEXT NOT NULL
+# );""")
+# db.commit()  # Saving a request
+# print("Studets table created")
+#
+# """Filling in the table Students"""
+# cur.execute("""INSERT INTO Students(First_name, Last_name)
+#     VALUES('Petr', 'Petrov');""")
+# db.commit()  # Saving a request
+
 """Table creation"""
-cur.execute("""CREATE TABLE IF NOT EXISTS Students(
-    StudentID INTEGER PRIMARY KEY,
+cur.execute("""CREATE TABLE IF NOT EXISTS Students1(
+    StudentID INTEGER PRIMARY KEY AUTOINCREMENT,
 	First_name TEXT NOT NULL,
 	Last_name TEXT NOT NULL
 );""")
@@ -25,6 +39,6 @@ db.commit()  # Saving a request
 print("Studets table created")
 
 """Filling in the table Students"""
-cur.execute("""INSERT INTO Students(StudentID, First_name, Last_name)
-    VALUES(1, 'Ivan', 'Ivanov');""")
+cur.execute("""INSERT INTO Students1(First_name, Last_name)
+    VALUES('Petr', 'Petrov');""")
 db.commit()  # Saving a request
