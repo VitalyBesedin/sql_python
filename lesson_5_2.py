@@ -10,6 +10,15 @@ import sqlite3
 # print(result)
 # print(type(result))
 
+"""New database creation"""
 db = sqlite3.connect('test_sql.db')  # database creation
 print("Connected to the database")
 cur = db.cursor()  # Variable to control the database
+
+"""Table creation"""
+cur.execute("""CREATE TABLE IF NOT EXISTS Students(
+    StudentID INTEGER PRIMARY KEY,
+	First_name TEXT NOT NULL,
+	Last_name TEXT NOT NULL
+);""")
+db.commit()  # Saving a request
