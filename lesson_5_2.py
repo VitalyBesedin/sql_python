@@ -23,3 +23,8 @@ cur.execute("""CREATE TABLE IF NOT EXISTS Students(
 );""")
 db.commit()  # Saving a request
 print("Studets table created")
+
+"""Filling in the table Students"""
+cur.execute("""INSERT INTO Students(StudentID, First_name, Last_name)
+    VALUES(1, 'Ivan', 'Ivanov');""")
+db.commit()  # Saving a request
