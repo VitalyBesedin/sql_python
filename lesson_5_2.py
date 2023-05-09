@@ -50,3 +50,4 @@ data_students = [('Alex', 'Aleksandrov'), ('Olga', 'Petrova')]
 cur.executemany("""INSERT INTO Students1(First_name, Last_name)
     VALUES(?, ?);""", data_students)
 db.commit()  # Saving a request
+print('Adding data to a table')
