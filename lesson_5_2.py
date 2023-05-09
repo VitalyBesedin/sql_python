@@ -38,14 +38,15 @@ cur.execute("""CREATE TABLE IF NOT EXISTS Students1(
 db.commit()  # Saving a request
 print("Studets table created")
 
-# """No secure - way Filling in the table Students"""
+# """No secure - way Filling out the table Students"""
 # cur.execute("""INSERT INTO Students1(First_name, Last_name)
 #     VALUES('Petr', 'Petrov');""")
 # db.commit()  # Saving a request
 
 
-"""Secure way - Filling in the table Students"""
-data_students = ('Semen', 'Semenov')
-cur.execute("""INSERT INTO Students1(First_name, Last_name)
+"""Secure way - Filling out the table Students"""
+# data_students = ('Semen', 'Semenov')
+data_students = [('Alex', 'Aleksandrov'), ('Olga', 'Petrova')]
+cur.executemany("""INSERT INTO Students1(First_name, Last_name)
     VALUES(?, ?);""", data_students)
 db.commit()  # Saving a request
