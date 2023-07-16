@@ -15,6 +15,8 @@ cur = db.cursor()  # Variable to control the database
 # print("Students1 table updated")
 
 """Deleting data from a table"""
-cur.execute("""DELETE FROM Students1 WHERE StudentID = 4""")
+delete_params = '8'
+cur.execute("""DELETE FROM Students1 WHERE StudentID = ?;""", delete_params)
+# cur.execute("""DELETE FROM Students1 WHERE StudentID = 4""")
 print("Deleting data from a table")
 db.commit()  # Saving a request
