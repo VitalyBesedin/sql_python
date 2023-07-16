@@ -8,7 +8,9 @@ cur = db.cursor()  # Variable to control the database
 
 
 """Table data update"""
-cur.execute("""UPDATE Students1 SET Last_name = 'Orlova' WHERE StudentID = 4""")
+update_params = ('Sokolova', 4)
+cur.execute("""UPDATE Students1 SET Last_name = ? WHERE StudentID = ?""", update_params)
+# cur.execute("""UPDATE Students1 SET Last_name = 'Orlova' WHERE StudentID = 4""")
 db.commit()  # Saving a request
 print("Students1 table updated")
 
